@@ -1,28 +1,19 @@
 @import 'tailwindcss';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+/* Scan all relevant files for Tailwind classes */
 @source '../**/*.blade.php';
 @source '../**/*.js';
+@source '../**/*.vue';
 
 @theme {
-    /* Change the default sans font to Hanken Grotesk */
-    --font-sans: 'Hanken Grotesk', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+    /* Set Hanken Grotesk as the default sans font */
+    --font-sans: 'Hanken Grotesk', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-    /* Optional: Add Hanken Grotesk as a custom font family */
-    --font-hanken: 'Hanken Grotesk', sans-serif;
+    /* Custom font size for extra small text */
+    --font-size-2xs: 0.625rem;
 }
 
-/* Global font application - choose one of these approaches */
-
-/* Option 1: Apply to all elements */
-/** {*/
-/*    font-family: var(--font-sans);*/
-/*}*/
-
-Option 2: Apply to html and body only (uncomment if you prefer this)
-html,
-body {
-    font-family: var(--font-sans);
+/* Custom utility classes */
+.text-2xs {
+    font-size: var(--font-size-2xs);
 }
