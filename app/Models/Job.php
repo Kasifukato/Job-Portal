@@ -22,10 +22,10 @@ class Job extends Model
 
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class); // Fixed: was belongsTo, should be belongsToMany
+        return $this->belongsToMany(Tag::class);
     }
 
-    public function employer(): BelongsTo // Fixed: lowercase method name
+    public function employer(): BelongsTo
     {
         return $this->belongsTo(Employer::class);
     }
