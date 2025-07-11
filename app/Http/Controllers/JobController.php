@@ -1,70 +1,73 @@
 <?php
 
-namespace App\Http\Controllers;
+    namespace App\Http\Controllers;
 
-use App\Models\Job;
-use App\Models\Tag;
-use App\Http\Requests\StoreJobRequest;
-use App\Http\Requests\UpdateJobRequest;
+    use App\Models\Job;
+    use App\Models\Tag;
+    use App\Http\Requests\StoreJobRequest;
+    use App\Http\Requests\UpdateJobRequest;
 
-class JobController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    class JobController extends Controller
     {
-        return view('jobs.index', [
-            'jobs' => Job::all(),
-            'tags'=> Tag::all()
-        ]);
-    }
+        /**
+         * Display a listing of the resource.
+         */
+        public function index()
+        {
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+            $jobs = Job::all()->groupBy('featured');
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreJobRequest $request)
-    {
-        //
-    }
+            return view('jobs.index', [
+                'jobs' => Job::all(),
+                'tags'=> Tag::all(),
+            ]);
+        }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Job $job)
-    {
-        //
-    }
+        /**
+         * Show the form for creating a new resource.
+         */
+        public function create()
+        {
+            //
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Job $job)
-    {
-        //
-    }
+        /**
+         * Store a newly created resource in storage.
+         */
+        public function store(StoreJobRequest $request)
+        {
+            //
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateJobRequest $request, Job $job)
-    {
-        //
-    }
+        /**
+         * Display the specified resource.
+         */
+        public function show(Job $job)
+        {
+            //
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Job $job)
-    {
-        //
+        /**
+         * Show the form for editing the specified resource.
+         */
+        public function edit(Job $job)
+        {
+            //
+        }
+
+        /**
+         * Update the specified resource in storage.
+         */
+        public function update(UpdateJobRequest $request, Job $job)
+        {
+            //
+        }
+
+        /**
+         * Remove the specified resource from storage.
+         */
+        public function destroy(Job $job)
+        {
+            //
+        }
     }
-}

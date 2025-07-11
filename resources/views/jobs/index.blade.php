@@ -30,9 +30,12 @@
             <x-section-heading>Tags</x-section-heading>
             <div class="mt-6 space-x-1">
 
+
+
                 @foreach($tags as $tag)
-                    <x-tag :$tag />
+                    <x-tag :tag="$tag" />
                 @endforeach
+
 
 
             </div>
